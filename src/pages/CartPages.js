@@ -14,7 +14,7 @@ export const CartPages = () => {
   const { cartState, deleteAllCart } = useContext(shopContext);
   const { cart } = cartState;
 
-  const priceTotal = cart.reduce((ack, item) => {
+  const priceTotal = cart?.reduce((ack, item) => {
     return ack + item.quantity * item.price;
   }, 0);
 
@@ -28,13 +28,13 @@ export const CartPages = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12 col-lg-9 mt-5 mb-5 d-flex flex-column min-vh-100">
-            {cart.length === 0 && (
+            {cart?.length === 0 && (
               <span>
                 <b>There are no products in the cart.</b>
               </span>
             )}
 
-            {cart.map((item, i) => (
+            {cart?.map((item, i) => (
               <div className="mb-3" key={i}>
                 <CartItem item={item} />
               </div>

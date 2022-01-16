@@ -13,17 +13,14 @@ import {
   ProductPrice,
 } from "./CartItem.styles";
 
-const API_URL = "http://localhost:1337";
-
 export const CartItem = ({ item }) => {
-  const imageURL = `${API_URL}${item.image[0].url}`;
-
   const { addProductToCart, removeProductFromCart } = useContext(shopContext);
 
   return (
     <Product>
       <ProductDetails>
-        <img src={imageURL} alt={item.title} />
+        <img src={item.image} alt={item.title} />
+
         <Details>
           <h2>{item.title}</h2>
           <br />

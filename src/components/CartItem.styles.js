@@ -23,14 +23,16 @@ export const ProductDetails = styled.div`
 
   img {
     object-fit: contain;
-    width: 200px;
+    width: 100px;
   }
 
   @media screen and (max-width: 375px) {
     flex-direction: column;
 
     img {
-      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 `;

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { shopContext } from "../context/GlobalState";
-import { Box, Grid, Paper, CircularProgress } from "@material-ui/core";
+import { Box, Grid, Paper } from "@material-ui/core";
 import { Wrapper } from "./styles/Headphones.styles";
 //@Components
 import { Navbar } from "../components/navbar/Navbar";
@@ -10,37 +10,9 @@ import { Footer } from "../components/footer/Footer";
 
 export const Headphones = () => {
   const [changeIcon, setChangeIcon] = useState(false);
-  const { data, isLoading, error } = useContext(shopContext);
+  const { data } = useContext(shopContext);
 
   const headphones = data?.filter((item) => item.productType === "headphones");
-
-  if (isLoading) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: 250,
-        }}
-      >
-        <CircularProgress color="secondary" />
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: 250,
-        }}
-      >
-        Error!
-      </div>
-    );
-  }
 
   return (
     <>

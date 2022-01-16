@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useReducer } from "react";
-import { useQuery } from "react-query";
 import { reducers } from "./reducers";
+import data from "../util/data";
 
 export const shopContext = createContext();
 
@@ -8,12 +8,7 @@ export const initialState = {
   cart: [],
 };
 
-const respApi = () =>
-  fetch("http://localhost:1337/products").then((res) => res.json());
-
 export const GlobalState = ({ children }) => {
-  const { isLoading, error, data } = useQuery("products", respApi);
-
   const [cartState, dispatch] = useReducer(reducers, initialState, () => {
     const localData = localStorage.getItem("list");
     return localData ? JSON.parse(localData) : [];
@@ -47,8 +42,6 @@ export const GlobalState = ({ children }) => {
     <shopContext.Provider
       value={{
         data,
-        isLoading,
-        error,
         cartState,
         addProductToCart,
         removeProductFromCart,

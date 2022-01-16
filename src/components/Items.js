@@ -13,10 +13,7 @@ import {
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { shopContext } from "../context/GlobalState";
 
-const API_URL = "http://localhost:1337";
-
 export const Items = ({ item }) => {
-  const imageURL = `${API_URL}${item.image[0].url}`;
   const { addProductToCart } = useContext(shopContext);
 
   return (
@@ -27,7 +24,7 @@ export const Items = ({ item }) => {
             <CardMedia
               component="img"
               height="150"
-              image={imageURL}
+              image={item.image}
               alt={item.title}
             />
           </Box>

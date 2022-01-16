@@ -2,11 +2,9 @@ import { initialState } from "./GlobalState";
 
 const addToCart = (product, state) => {
   const updatedCart = [...state.cart];
-
   const updatedItemIndex = updatedCart.findIndex(
     (item) => item.id === product.id
   );
-
   if (updatedItemIndex < 0) {
     updatedCart.push({ ...product, quantity: 1 });
   } else {
@@ -16,7 +14,6 @@ const addToCart = (product, state) => {
     updateItem.quantity++;
     updatedCart[updatedItemIndex] = updateItem;
   }
-
   return { ...state, cart: updatedCart };
 };
 

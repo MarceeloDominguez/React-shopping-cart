@@ -19,7 +19,7 @@ export const Navbar = ({ changeIcon, setChangeIcon }) => {
   const { cartState } = useContext(shopContext);
   const { cart } = cartState;
 
-  const cartItemNumber = cart.reduce((ack, item) => {
+  const cartItemNumber = cart?.reduce((ack, item) => {
     return ack + item.quantity;
   }, 0);
 
