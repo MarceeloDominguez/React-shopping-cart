@@ -1,6 +1,9 @@
 Shopping cart handling state with context. 
+<br />
 Ui with styled-components.
+<br />
 The information is saved in the localStorage.
+<br />
 I copied the idea from a challenge in Frontend Mentor. Link: https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx
 
 ![home](https://user-images.githubusercontent.com/70117105/149677057-c1493905-a46f-44fe-9f88-535a5d81065a.png)
